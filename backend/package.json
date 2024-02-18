@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon src/app.js",
+    "migrate": "npx knex migrate:latest --knexfile ./src/config/knex.js --migrations-directory ../migrations",
+    "migrate:create-locations-table": "knex --knexfile ./src/config/knex.js migrate:make create_locations_table",
+    "rollback": "npx knex migrate:rollback --knexfile ./src/config/knex.js --migrations-directory ../migrations"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.4",
+    "express": "^4.18.2",
+    "joi": "^17.12.1",
+    "knex": "^3.1.0",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
