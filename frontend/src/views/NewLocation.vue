@@ -1,48 +1,32 @@
 <!-- src/views/NewLocation.vue -->
 
 <template>
-  <!-- Main template structure for location form with GoogleMap component -->
+  <!-- Main template structure for location form with MyGoogleMap component -->
   <div class="container g-0 my-3">
     <div class="row">
-      <!-- GoogleMap component occupying 9 out of 12 columns -->
+      <!-- MyGoogleMap component occupying 9 out of 12 columns -->
       <div class="col-md-9">
-        <GoogleMap
-          :locations="locations"
-          @marked="handleMarked" />
+        <MyGoogleMap :locations="locations" @marked="handleMarked" />
       </div>
 
       <!-- Form for creating a new location occupying 3 out of 12 columns -->
       <div class="col-md-3">
         <div class="card rounded-0">
-          <form
-            class="card-body"
-            @submit.prevent="saveLocation">
+          <form class="card-body" @submit.prevent="saveLocation">
             <!-- Input field for location title -->
             <div class="form-floating mb-3">
-              <input
-                type="text"
-                class="form-control rounded-0"
-                id="floatingTitle"
-                placeholder="Title"
-                v-model="locationTitle" />
+              <input type="text" class="form-control rounded-0" id="floatingTitle" placeholder="Title" v-model="locationTitle" />
               <label for="floatingTitle">Title</label>
             </div>
 
             <!-- File input for uploading an image -->
             <div class="form-group mb-3">
-              <input
-                class="form-control rounded-0"
-                id="formFileLg"
-                type="file"
-                ref="fileInput"
-                @change="uploadFile" />
+              <input class="form-control rounded-0" id="formFileLg" type="file" ref="fileInput" @change="uploadFile" />
             </div>
 
             <!-- Submit button for saving the location -->
             <div class="d-grid gap-2">
-              <button
-                class="btn btn-primary rounded-0"
-                type="submit">
+              <button class="btn btn-primary rounded-0" type="submit">
                 Submit
               </button>
             </div>
@@ -54,12 +38,12 @@
 </template>
 
 <script>
-// Importing Axios for HTTP requests and the GoogleMap component
+// Importing Axios for HTTP requests and the MyGoogleMap component
 import axios from 'axios';
-import GoogleMap from '../components/GoogleMap.vue';
+import MyGoogleMap from '../components/MyGoogleMap.vue';
 
 export default {
-  name: 'LocationForm',  // Component name
+  name: 'NewLocation',  // Component name
   data() {
     // Data properties for location form
     return {
@@ -70,7 +54,7 @@ export default {
     };
   },
   components: {
-    GoogleMap,  // Registering the GoogleMap component for use within this component
+    MyGoogleMap,  // Registering the MyGoogleMap component for use within this component
   },
   methods: {
     // Method triggered when a new location is marked on the map
@@ -152,6 +136,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-/* No specific styles added in this component */
-</style>
+<style></style>

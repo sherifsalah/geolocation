@@ -1,12 +1,12 @@
 <!-- src/views/ListLocations.vue -->
 
 <template>
-    <!-- Main template structure for displaying locations with GoogleMap and LocationCard components -->
+    <!-- Main template structure for displaying locations with MyGoogleMap and LocationCard components -->
     <div class="container g-0 my-3">
         <div class="row">
-            <!-- GoogleMap component occupying 9 out of 12 columns -->
+            <!-- MyGoogleMap component occupying 9 out of 12 columns -->
             <div class="col-md-9">
-                <GoogleMap ref="googleMap" :locations="locations" />
+                <MyGoogleMap ref="googleMap" :locations="locations" />
             </div>
 
             <!-- Section for adding new locations and displaying existing ones occupying 3 out of 12 columns -->
@@ -37,13 +37,13 @@
 </template>
 
 <script>
-// Importing Axios for HTTP requests, GoogleMap and LocationCard components
+// Importing Axios for HTTP requests, MyGoogleMap and LocationCard components
 import axios from 'axios';
-import GoogleMap from '../components/GoogleMap.vue';
+import MyGoogleMap from '../components/MyGoogleMap.vue';
 import LocationCard from '../components/partials/LocationCard.vue';
 
 export default {
-    name: 'Locations',  // Component name
+    name: 'ListLocations',  // Component name
     data() {
         // Data property for storing an array of locations
         return {
@@ -53,6 +53,7 @@ export default {
     mounted() {
         // Fetch locations when the component is mounted
         this.fetchLocations();
+        console.log("App mounted.");
     },
     methods: {
         // Method for fetching locations from the server
@@ -71,7 +72,7 @@ export default {
         },
     },
     components: {
-        GoogleMap,       // Registering the GoogleMap component for use within this component
+        MyGoogleMap,       // Registering the MyGoogleMap component for use within this component
         LocationCard,    // Registering the LocationCard component for use within this component
     },
 };

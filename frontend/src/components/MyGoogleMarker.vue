@@ -21,7 +21,7 @@
 import { Marker, InfoWindow } from 'vue3-google-map';
 
 export default {
-    name: 'GoogleMarker',  // Component name
+    name: 'MyGoogleMarker',  // Component name
     components: {
         Marker,       // Registering the Marker component for use within this component
         InfoWindow,   // Registering the InfoWindow component for use within this component

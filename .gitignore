@@ -8,6 +8,7 @@ yarn-error.log
 # Backend dependencies and build artifacts
 /backend/node_modules/
 /backend/dist/
+/backend/src/uploads/*
 
 # Frontend dependencies and build artifacts
 /frontend/node_modules/

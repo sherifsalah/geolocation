@@ -1,13 +1,13 @@
 <!-- frontend/src/components/GoogleMap.vue -->
 
 <template>
-    <!-- Template structure for Google Maps component with GoogleMarker and Marker components -->
+    <!-- Template structure for Google Maps component with MyGoogleMarker and Marker components -->
     <div class="ratio ratio-16x9">
         <!-- GoogleMap component with specified API key, style, center, and zoom -->
-        <GoogleMap ref="googleMap" api-key="AIzaSyCZLAf0TJ6D25IAgeDrjOqbrmYfFPOkaAI" style="width: 100%; height: 100%" :center="mapCenter" :zoom="zoom"
+        <GoogleMap api-key="AIzaSyCZLAf0TJ6D25IAgeDrjOqbrmYfFPOkaAI" style="width: 100%; height: 100%" :center="mapCenter" :zoom="zoom"
             @click="handleMapClick">
-            <!-- Iterating through locations and rendering GoogleMarker components -->
-            <GoogleMarker v-for="(location, index) in locations" :key="index" :location="location" />
+            <!-- Iterating through locations and rendering MyGoogleMarker components -->
+            <MyGoogleMarker v-for="(location, index) in locations" :key="index" :location="location" />
             <!-- Marker component for a new location with a blue dot icon -->
             <Marker :options="{
                 position: newMarkerPosition,
@@ -20,14 +20,14 @@
 </template>
 
 <script>
-// Importing GoogleMarker, GoogleMap, and Marker components from vue3-google-map
-import GoogleMarker from './GoogleMarker.vue';
+// Importing MyGoogleMarker, GoogleMap, and Marker components from vue3-google-map
+import MyGoogleMarker from './MyGoogleMarker.vue';
 import { GoogleMap, Marker } from 'vue3-google-map';
 
 export default {
-    name: 'GoogleMap',  // Component name
+    name: 'MyGoogleMap',  // Component name
     components: {
-        GoogleMarker,   // Registering the GoogleMarker component for use within this component
+        MyGoogleMarker,   // Registering the MyGoogleMarker component for use within this component
         GoogleMap,      // Registering the GoogleMap component for use within this component
         Marker,         // Registering the Marker component for use within this component
     },
@@ -45,7 +45,7 @@ export default {
     methods: {
         // Method to update the map center based on the first location in the array
         updateMapCenter() {
-            if (this.locations.length > 0) {
+            if (this.locations?.length > 0) {
                 this.mapCenter = {
                     lat: parseFloat(this.locations[0].latitude),
                     lng: parseFloat(this.locations[0].longitude),

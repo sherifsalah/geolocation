@@ -39,7 +39,7 @@ Ensure that you have the following installed on your machine:
    npm run init
    ```
 
-   This command will navigate to the backend directory, install backend dependencies, run the bootstrap script to create the necessary directories, install frontend dependencies, and set up the database migrations.
+   This command will install the required dependencies then navigate to the backend directory, install backend dependencies, run the bootstrap script to create the necessary directories, install frontend dependencies, and set up the database migrations.
 
 ## Database Configuration
 

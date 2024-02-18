@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App.vue'
 
 import { createRouter, createWebHistory } from 'vue-router';
-import ListLocations from './components/ListLocations.vue';
+import ListLocations from './views/ListLocations.vue';
 import NewLocation from './views/NewLocation.vue';
 
 const router = createRouter({

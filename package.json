@@ -6,7 +6,7 @@
     "resolveJsonModule": true,
     "description": "GEOLocations App",
     "scripts": {
-        "init": "cd backend && node bootstrap.js && npm run migrate",
+        "init": "npm i && cd backend && npm i && node bootstrap.js && npm run migrate && cd ../frontend && npm i",
         "start:backend": "nodemon backend/src/app.js",
         "start:frontend": "npm run serve --prefix frontend",
         "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\""
